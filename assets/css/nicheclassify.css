@@ -1,0 +1,246 @@
+/* Directory Listing Grid */
+.nc-directory-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Listing Card */
+.nc-listing {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.nc-listing:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.nc-listing-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.nc-listing-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+.nc-listing-excerpt {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Featured Badge */
+.nc-featured-badge {
+  background: #ffcc00;
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  font-weight: bold;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+/* Filters and Forms */
+.nc-directory-filters,
+.nc-contact form,
+.nc-user-dashboard,
+.nc-group-field {
+  margin-bottom: 2rem;
+}
+.nc-directory-filters input,
+.nc-directory-filters select,
+.nc-contact input,
+.nc-contact textarea,
+.nc-group-field input,
+.nc-group-field textarea {
+  width: 100%;
+  padding: 0.4rem;
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+/* Input Focus Enhancement */
+.nc-field-row input:focus,
+.nc-field-row select:focus,
+.nc-field-row textarea:focus {
+  border-color: #0073aa;
+  box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.15);
+  outline: none;
+}
+
+/* Readonly Fields */
+.nc-field-row input[readonly],
+.nc-field-row textarea[readonly] {
+  background-color: #f5f5f5;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Disabled Fields */
+.nc-field-row input[disabled],
+.nc-field-row select[disabled],
+.nc-field-row textarea[disabled] {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Contact */
+.nc-contact-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0073aa;
+  color: #fff;
+  text-decoration: none;
+}
+.nc-contact-button:hover {
+  background: #005f8d;
+}
+
+/* Pagination */
+.nc-pagination {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+.nc-pagination li {
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.7rem;
+}
+
+/* Field Row Layout */
+.nc-field-row {
+  margin-bottom: 1rem;
+}
+
+/* Label Styling */
+.nc-field-row label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* Checkbox Alignment */
+.nc-field-row input[type="checkbox"] {
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+/* Button Styling */
+.nc-field-row .button,
+.nc-field-row .button-secondary {
+  background: #0073aa;
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.nc-field-row .button:hover,
+.nc-field-row .button-secondary:hover {
+  background: #005f8d;
+}
+
+/* Field Description Text */
+.nc-field-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Error Message Styling */
+.nc-form-error {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Success Message Styling */
+.nc-form-success {
+  color: #2e7d32;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Group Entry Layout */
+.nc-group-entry {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+.nc-group-entry .nc-remove-group-entry {
+  float: right;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.nc-group-entry .nc-remove-group-entry:hover {
+  background: #c62828;
+}
+
+/* Media & Gallery Previews */
+.nc-media-preview img,
+.nc-gallery-preview img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0.5rem;
+}
+.nc-gallery-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.nc-gallery-preview .nc-gallery-item {
+  position: relative;
+}
+.nc-gallery-preview .nc-remove-gallery-item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 0 0 0 4px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+/* Field Group Section Titles */
+.nc-field-section {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+}
+
+/* Tooltip or Info Label */
+.nc-field-info {
+  font-size: 0.85rem;
+  color: #777;
+  display: inline-block;
+  margin-left: 0.5rem;
+  cursor: help;
+}
+.nc-field-info:hover {
+  text-decoration: underline dotted;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "nicheclassify/framework",
+  "description": "Modern WordPress classifieds framework plugin.",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "NicheClassify\\": "includes/"
+    }
+  },
+  "require": {}
+}

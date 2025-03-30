@@ -1,0 +1,22 @@
+image: php:8.1
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: PHPUnit Tests
+          caches:
+            - composer
+          script:
+            - apt-get update && apt-get install -y unzip git zip
+            - curl -sS https://getcomposer.org/installer | php
+            - php composer.phar install
+            - vendor/bin/phpunit
+
+    main:
+      - step:
+          name: Build Plugin ZIP
+          script:
+            - zip -r nicheclassify-framework.zip . -x "*.git*" "vendor/*" "tests/*" "*.yml" "*.xml"
+          artifacts:
+            - nicheclassify-framework.zip

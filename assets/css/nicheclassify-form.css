@@ -1,0 +1,62 @@
+/* Submission Form Styling */
+.nc-submit-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.nc-submit-form p {
+  margin-bottom: 1.2rem;
+}
+
+.nc-submit-form input[type="text"],
+.nc-submit-form input[type="email"],
+.nc-submit-form input[type="number"],
+.nc-submit-form input[type="file"],
+.nc-submit-form textarea,
+.nc-submit-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.nc-submit-form textarea {
+  resize: vertical;
+}
+
+.nc-submit-form input[type="submit"],
+.nc-submit-form .button {
+  background: #0073aa;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.nc-submit-form input[type="submit"]:hover {
+  background: #005f8d;
+}
+
+/* Success & Error Messages */
+.nc-submit-form .nc-form-success {
+  background: #dff0d8;
+  color: #3c763d;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d6e9c6;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+.nc-submit-form .nc-form-error {
+  background: #f2dede;
+  color: #a94442;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ebccd1;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}

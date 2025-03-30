@@ -1,0 +1,78 @@
+/* User Dashboard Table */
+.nc-user-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.nc-user-dashboard th,
+.nc-user-dashboard td {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.nc-user-dashboard th {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+.nc-user-dashboard td a {
+  color: #0073aa;
+  text-decoration: none;
+}
+.nc-user-dashboard td a:hover {
+  text-decoration: underline;
+}
+
+/* Status Label */
+.nc-user-dashboard .status-approved {
+  color: #2e7d32;
+  font-weight: bold;
+}
+.nc-user-dashboard .status-pending {
+  color: #e65100;
+  font-weight: bold;
+}
+.nc-user-dashboard .status-draft {
+  color: #546e7a;
+  font-weight: bold;
+}
+
+/* Responsive Table on Mobile */
+@media screen and (max-width: 768px) {
+  .nc-user-dashboard table,
+  .nc-user-dashboard thead,
+  .nc-user-dashboard tbody,
+  .nc-user-dashboard th,
+  .nc-user-dashboard td,
+  .nc-user-dashboard tr {
+    display: block;
+  }
+
+  .nc-user-dashboard thead tr {
+    display: none;
+  }
+
+  .nc-user-dashboard tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background: #fff;
+  }
+
+  .nc-user-dashboard td {
+    border: none;
+    padding: 0.4rem 0;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .nc-user-dashboard td::before {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.4rem;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #555;
+    content: attr(data-label);
+  }
+}
