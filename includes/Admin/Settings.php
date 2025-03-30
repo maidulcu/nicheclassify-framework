@@ -6,7 +6,16 @@ namespace NicheClassify\Admin;
 
 defined('ABSPATH') || exit;
 
-class Plugin_Settings {
+class Settings {
+
+    protected static $instance = null;
+
+    public static function get_instance() {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 
     public function __construct() {
         add_action('admin_menu', [$this, 'add_settings_page']);
@@ -112,5 +121,3 @@ class Plugin_Settings {
         <?php
     }
 }
-
-$GLOBALS['nc_plugin_settings'] = new NC_Plugin_Settings();

@@ -6,7 +6,15 @@ namespace NicheClassify\Directory;
 
 defined('ABSPATH') || exit;
 
-class Directory_Renderer {
+class DirectoryRenderer {
+    protected static $instance = null;
+
+    public static function get_instance() {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 
     public function __construct() {
         add_shortcode('nc_listing_gallery', [$this, 'render_gallery_shortcode']);
@@ -291,6 +299,3 @@ class Directory_Renderer {
         include $template;
     }
 }
-
-// Initialize
-$GLOBALS['nc_directory_renderer'] = new NC_Directory_Renderer();

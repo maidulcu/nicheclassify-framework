@@ -6,7 +6,15 @@ namespace NicheClassify\User;
 
 defined('ABSPATH') || exit;
 
-class User_Dashboard {
+class UserDashboard {
+    protected static $instance = null;
+
+    public static function get_instance() {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 
     public function __construct() {
         add_shortcode('nc_dashboard', [$this, 'render_dashboard']);
@@ -97,5 +105,3 @@ class User_Dashboard {
         return ob_get_clean();
     }
 }
-
-$GLOBALS['nc_user_dashboard'] = new NC_User_Dashboard();

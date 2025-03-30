@@ -6,7 +6,7 @@ namespace NicheClassify\Fields;
 
 defined('ABSPATH') || exit;
 
-class Field_Manager {
+class FieldManager {
     protected static $instance = null;
     protected $fields = [];
 

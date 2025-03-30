@@ -12,7 +12,7 @@ Thumbs.db
 .idea/
 
 # Composer
-/vendor/
+
 
 # PHPUnit
 phpunit.xml.cache

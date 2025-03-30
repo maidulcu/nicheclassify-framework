@@ -6,7 +6,15 @@ namespace NicheClassify\Forms;
 
 defined('ABSPATH') || exit;
 
-class Form_Handler {
+class FormHandler {
+    protected static $instance = null;
+
+    public static function get_instance() {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 
     public function __construct() {
         add_shortcode('nc_submit_form', [$this, 'render_submission_form']);
@@ -166,5 +174,3 @@ class Form_Handler {
         echo '<p class="nc-form-success">' . esc_html__('Listing submitted successfully and is pending review.', 'nicheclassify') . '</p>';
     }
 }
-
-$GLOBALS['nc_form_handler'] = new NC_Form_Handler();
