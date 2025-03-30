@@ -1,0 +1,25 @@
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# IDEs
+.vscode/
+.idea/
+
+# Composer
+/vendor/
+
+# PHPUnit
+phpunit.xml.cache
+tests/_output/
+
+# WordPress plugin packaging
+*.zip
+
+# Node/npm (if used)
+node_modules/

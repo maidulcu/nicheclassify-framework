@@ -1,0 +1,47 @@
+name: Plugin CI
+
+on:
+  push:
+    branches: [ develop, main ]
+
+jobs:
+  test:
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    name: Run PHPUnit tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+
+      - name: Install dependencies
+        run: |
+          curl -sS https://getcomposer.org/installer | php
+          php composer.phar install
+
+      - name: Run tests
+        run: vendor/bin/phpunit
+
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    name: Build Plugin ZIP
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Zip plugin
+        run: |
+          zip -r nicheclassify-framework.zip . -x "*.git*" "vendor/*" "tests/*" ".github/*" "*.xml" "*.yml"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: nicheclassify-framework
+          path: nicheclassify-framework.zip
